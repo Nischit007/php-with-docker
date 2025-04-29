@@ -10,6 +10,8 @@ $dsn = "pgsql:host=$host;port=$port;dbname=$dbname;";
 try {
     $pdo = new PDO($dsn, $user, $password);
     echo "Connected to PostgreSQL database successfully!";
+
+    echo "hellpo wportld";
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }

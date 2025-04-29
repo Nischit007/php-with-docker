@@ -1,19 +1,20 @@
 version: '3.8'
+
 services:
   php-app:
     build: .
     ports:
-      - "8000:8000"
+      - "8080:80"
     volumes:
-      - .:/usr/src/myapp
+      - .:/var/www/html
     depends_on:
       - db
     environment:
-      - DB_HOST=db
-      - DB_PORT=5432
-      - DB_NAME=mydatabase
-      - DB_USER=myuser
-      - DB_PASSWORD=mypassword
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: mydatabase
+      DB_USER: myuser
+      DB_PASSWORD: mypassword
 
   db:
     image: postgres:15
